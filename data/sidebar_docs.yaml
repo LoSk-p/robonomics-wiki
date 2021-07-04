@@ -79,6 +79,14 @@
       items:
         - title_en: Try It Out
           link: /docs/spot-try-it-out
+        - title_en: Lesson 0. Connection
+          link: /docs/spot-lesson0
+        - title_en: Lesson 1. Robot Services 
+          link: /docs/spot-lesson1
+        - title_en: Lesson 2. Robot Command Service
+          link: /docs/spot-lesson2
+        - title_en: Troubleshooting
+          link: /docs/spot-troubleshooting
 
 - title_en: Learn
   items:
