@@ -44,6 +44,25 @@ def velocity_command(v_x, v_y, v_rot, params=None, body_height=0.0,
                          locomotion_hint=spot_command_pb2.HINT_AUTO, 
                          frame_name=BODY_FRAME_NAME)
 ```
+
+* Stance Command
+
+```python
+def stance_command(se2_frame_name, pos_fl_rt_frame, pos_fr_rt_frame, 
+                        pos_hl_rt_frame,
+                        pos_hr_rt_frame, accuracy=0.05, 
+                        params=None, body_height=0.0,
+                        footprint_R_body=geometry.EulerZXY(), 
+                        build_on_command=None)
+```
+The example of use is [here](https://github.com/boston-dynamics/spot-sdk/blob/91ed30607264e795699995d6d7834ba0c8a94d36/python/examples/stance/stance_in_place.py)
+
+* Pose to change battery
+
+```python
+def battery_change_pose_command(dir_hint=1)
+```
+
 Example of building and running velocity command:
 
 ```python
@@ -57,4 +76,11 @@ command_client.robot_command(robot_cmd, end_time_secs=time.time() + 2)
 
 ## Task
 
-You will have a list of points with their local coordinates and you need make Spot to go through theese points.
+You will have a list of points with their local coordinates and you need make Spot to go through theese points. Spot must do one of moves in each point and they should not be repeated. 
+
+The list of moves: 
+* To go sideways to point
+* To turn around himself
+* To lie down in pose to change battery
+* To nod
+* To change the stance of robot's legs
