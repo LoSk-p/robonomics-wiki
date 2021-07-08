@@ -12,13 +12,24 @@ Install Yggdrasil to your computer
 
 * For MacOS install .pkg file from this [release 0.3.16](https://github.com/yggdrasil-network/yggdrasil-go/releases/tag/v0.3.16)
 
+* For Windows download .msi file for your architecture from [0.3.16 release](https://github.com/yggdrasil-network/yggdrasil-go/releases/tag/v0.3.16) and run it.
+
 ## Updating the peers
 
 You need to add a list of peers so that you will be able to connect to Spot. For that, edit the Yggdrasil configuration file with this command:
 
+### For MacOS and Linux:
+
 ```bash
 sudo nano /etc/yggdrasil.conf
 ```
+
+### For Windows 
+Run `updateconfig.bat` in `C:/Program Files/Yggdrasil`. 
+
+Then in `C:/ProgramData/Yggdrasil` open `yggdrasil.conf` with any text editor.
+
+---
 
 In the file that you opened add 5-6 peers geografically near to you. You can find list of available peers [here](https://github.com/yggdrasil-network/public-peers). Example in yggdrasil.conf:
 
@@ -60,6 +71,10 @@ sudo launchctl unload /Library/LaunchDaemons/yggdrasil.plist
 sudo yggdrasil -useconffile /etc/yggdrasil.conf
 ```
 > You will need to do that before every lesson.
+
+### For Windows
+
+Press win + r and type `services.msc`, find Yggdrasil service, open it and restart (press Stop and Start).
 
 ## Check Connection
 
