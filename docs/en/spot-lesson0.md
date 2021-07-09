@@ -76,6 +76,8 @@ sudo yggdrasil -useconffile /etc/yggdrasil.conf
 
 Press win + r and type `services.msc`, find Yggdrasil service, open it and restart (press Stop and Start).
 
+![win-service](../images/spot/spot-windows.jpg)
+
 ## Check Connection
 
 Check if Yggdrasil works well. For that try to connect to Spot via this link: https://[200:c32a:e1ac:1da2:15ed:626f:c1e0:36ed]:21443. If you see authentication page, you are ready to connect to Spot and do next lessons.
