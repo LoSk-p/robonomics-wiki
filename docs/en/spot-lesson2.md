@@ -70,7 +70,7 @@ from bosdyn.client.robot_command import RobotCommandClient, RobotCommandBuilder
 import time
 
 command_client = robot.ensure_client(RobotCommandClient.default_service_name)
-cmd = RobotCommandBuilder.velocity_command(0.5, 0, 0.5)
+robot_cmd = RobotCommandBuilder.velocity_command(0.5, 0, 0.5)
 command_client.robot_command(robot_cmd, end_time_secs=time.time() + 2)
 ```
 
