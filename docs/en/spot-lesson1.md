@@ -11,7 +11,7 @@ During this lesson you will learn how to authorize yourself as a user, get motor
 
 ## Requirements
 
-Before this lesson go through [Lesson 0](/docs/spot-lesson0) to setup your connection.
+Before this lesson go through [Lesson 0](/docs/spot-lesson0.md) to setup your connection.
 
 ## Connection
 
