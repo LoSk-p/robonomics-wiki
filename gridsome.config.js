@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Robonomics Wiki',
+  siteUrl: 'https://wiki.robonomics.network/',
   // siteDescription: 'The Robonomics Wiki aims to bring all the knowledge about Robonomics to end users and everyone who is interested in the project.',
   
   plugins: [
@@ -30,35 +31,13 @@ module.exports = {
       }
     },
 
-      {
-        use: 'gridsome-plugin-yandex-metrika',
-        options: {
-          id: 68969365,
-          options:  {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-          }
-        }
-      },
-      {
-        use: 'gridsome-plugin-gtm',
-        options: {
-          id: 'GTM-5ZL8NWB',
-          enabled: true,
-          debug: true
-        }
-      },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        include: ['/docs', '/docs/**']
+      }
+    }
   ],
-
-
-  // transformers: {
-  //   remark: {
-  //     externalLinks: false
-  //   }
-  // },
-
 
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
