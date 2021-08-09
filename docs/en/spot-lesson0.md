@@ -76,7 +76,7 @@ Press win + r and type `services.msc`, find Yggdrasil service, open it and resta
 
 ## Check Connection
 
-Check if Yggdrasil works well. For that try to connect to Spot via this link: https://[200:2fba:a23a:9d37:7e2b:3303:ca4e:208f]:21443. If you see authentication page, you are ready to connect to Spot and do next lessons.
+Check if Yggdrasil works well. For that try to connect to Spot via this link: [https://[200:2fba:a23a:9d37:7e2b:3303:ca4e:208f]:21443](https://[200:2fba:a23a:9d37:7e2b:3303:ca4e:208f]:21443). If you see authentication page, you are ready to connect to Spot and do next lessons.
 
 > If you can't open page in MacOS try to use another browser.
 
