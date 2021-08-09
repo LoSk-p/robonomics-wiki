@@ -8,15 +8,15 @@ translated: true
 
 Install Yggdrasil to your computer
 
-* For Linux installation instructions [here](https://yggdrasil-network.github.io/installation.html)
+* For Linux installation instructions [here](https://yggdrasil-network.github.io/installation-linux-deb.html)
 
-* For MacOS install .pkg file from this [release 0.3.16](https://github.com/yggdrasil-network/yggdrasil-go/releases/tag/v0.3.16)
+* For MacOS install .pkg file from the latest [release](https://github.com/yggdrasil-network/yggdrasil-go/releases)
 
-* For Windows download .msi file for your architecture from [0.3.16 release](https://github.com/yggdrasil-network/yggdrasil-go/releases/tag/v0.3.16) and run it.
+* For Windows download .msi file for your architecture from the latest [release](https://github.com/yggdrasil-network/yggdrasil-go/releases) and run it.
 
 ## Updating the peers
 
-You need to add a list of peers so that you will be able to connect to Spot. For that, edit the Yggdrasil configuration file with this command:
+You need to add a list of peers so that you will be able to connect to Spot. For that, edit the Yggdrasil configuration file with this command in a terminal:
 
 ### For MacOS and Linux:
 
@@ -31,26 +31,22 @@ Then in `C:/ProgramData/Yggdrasil` open `yggdrasil.conf` with any text editor.
 
 ---
 
-In the file that you opened add 5-6 peers geografically near to you. You can find list of available peers [here](https://github.com/yggdrasil-network/public-peers). Example in yggdrasil.conf:
+In the file that you opened add 5-6 peers geografically near to you. You can find list of available peers [here](https://github.com/yggdrasil-network/public-peers) or add peers from example below. Example in yggdrasil.conf:
 
 ```bash
   Peers:
   [
-    tcp://95.79.25.190:50001
-    tcp://[2a00:b700:2::6:69]:1333
-    tcp://n2o.ddns.net:22632
-    tcp://ygg.tomasgl.ru:61933
-    tcp://37.139.18.100:59243
-    tcp://1.ams.nl.y.fftlt.net:21285
-    tcp://1.msk.ru.y.fftlt.net:21285
-    tcp://1.tlt.ru.y.fftlt.net:21285
-    tcp://ygg.loskiq.com:17313
-    tcp://88.201.129.205:8777
-    tcp://[2a05:3580:d900:1b13:e2d5:5eff:fed8:8b86]:8777
-    tls://88.201.129.205:8778
-    tls://[2a05:3580:d900:1b13:e2d5:5eff:fed8:8b86]:8778
-    tcp://194.177.21.156:5066
+    tcp://213.188.199.150:10010
+    tcp://213.188.210.9:10010
+    tcp://[2a09:8280:1::3:312]:10010
+    tcp://[2a09:8280:1::a:2e2]:10010
     tcp://46.151.26.194:60575
+    tcp://ygg-ru.cofob.ru:18000
+    tcp://ygg.tomasgl.ru:61933
+    tls://185.22.60.71:8443
+    tcp://51.15.118.10:62486
+    tls://ygg.loskiq.dev:17314
+    tls://longseason.1200bps.xyz:13122
   ]
   ```
 Check if the peers online in [Puplic Peers](https://publicpeers.neilalexander.dev/).
@@ -80,7 +76,9 @@ Press win + r and type `services.msc`, find Yggdrasil service, open it and resta
 
 ## Check Connection
 
-Check if Yggdrasil works well. For that try to connect to Spot via this link: https://[200:c32a:e1ac:1da2:15ed:626f:c1e0:36ed]:21443. If you see authentication page, you are ready to connect to Spot and do next lessons.
+Check if Yggdrasil works well. For that try to connect to Spot via this link: https://[200:2fba:a23a:9d37:7e2b:3303:ca4e:208f]:21443. If you see authentication page, you are ready to connect to Spot and do next lessons.
+
+> If you can't open page in MacOS try to use another browser.
 
 ![log_in](../images/spot/less1-login.jpg)
 

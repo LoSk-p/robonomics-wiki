@@ -40,9 +40,9 @@ The example of use [here](https://github.com/boston-dynamics/spot-sdk/blob/maste
 * Velocity Command
 
 ```python
-def velocity_command(v_x, v_y, v_rot, params=None, body_height=0.0,
-                         locomotion_hint=spot_command_pb2.HINT_AUTO, 
-                         frame_name=BODY_FRAME_NAME)
+def synchro_velocity_command(v_x, v_y, v_rot, params=None, body_height=0.0,
+                            locomotion_hint=spot_command_pb2.HINT_AUTO, 
+                            frame_name=BODY_FRAME_NAME)
 ```
 
 * Stance Command
