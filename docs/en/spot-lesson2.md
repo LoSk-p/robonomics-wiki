@@ -72,12 +72,12 @@ import time
 
 command_client = robot.ensure_client(RobotCommandClient.default_service_name)
 cmd = RobotCommandBuilder.velocity_command(0.5, 0, 0.5)
-command_client.robot_command(robot_cmd, end_time_secs=time.time() + 2)
+command_client.robot_command(cmd, end_time_secs=time.time() + 2)
 ```
 
 ## Task
 
-You will have a list of points with their local coordinates and you need to make Spot to go through theese points. Spot must do one of moves in each point and they should not be repeated. 
+You will have a list of points with their local coordinates in the `lessons` directory and you need to make Spot go through theese points. The origin of the local coordinates is in the place where Spot was turned on. Spot must do one of moves in each point and they should not be repeated. 
 
 The list of moves: 
 * To go sideways to point
@@ -85,3 +85,8 @@ The list of moves:
 * To lie down in pose to change battery
 * To nod
 * To change the stance of robot's legs
+
+> You can find Spot local coordinates with:
+> ```python
+> get_vision_tform_body(robot_state_client.get_robot_state().kinematic_state.transforms_snapshot)
+> ```

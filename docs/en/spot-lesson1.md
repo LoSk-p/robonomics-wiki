@@ -22,9 +22,8 @@ Before this lesson go through [Lesson 0](/docs/spot-lesson0) to setup your conne
 
 To control Spot you need to connect to Spot Core. You can do that using ssh, in the terminal:
 ```bash
-ssh <username>@200:2fba:a23a:9d37:7e2b:3303:ca4e:208f
+ssh student@200:2fba:a23a:9d37:7e2b:3303:ca4e:208f
 ```
-Where `<username>` is the username you've got after booking lesson.
 
 > Also you can see what the robot is doing in real-time <a href="http://200:7938:167:4f0a:e7f4:196c:6585:52ad]:8081/?action=stream">livestream</a>.
 

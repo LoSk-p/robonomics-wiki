@@ -21,9 +21,10 @@ Download .msi file for [x64 system](https://github.com/yggdrasil-network/yggdras
 
 ## 2. Open configuration file
 
-You need to add a list of peers (public nodes) to configuration file so that you will be able to connect to Spot. For that, edit the `yggdrasil.conf` file with this command in a terminal:
+You need to add a list of peers (public nodes) to configuration file so that you will be able to connect to Spot. 
 
 ### For MacOS and Linux:
+For that, edit the `yggdrasil.conf` file with this command in a terminal:
 
 ```bash
 sudo nano /etc/yggdrasil.conf
@@ -115,6 +116,6 @@ Run following command in the terminal:
 ```bash
 ssh-keygen -t rsa
 ```
-> SSH Client is available by default only in Windows 10, so if you use older versions you need to install it. For excample you can use [PuTTY](https://www.putty.org/).
+> SSH Client is available by default only in Windows 10, so if you use older versions you need to install it. For example you can use [PuTTY](https://www.putty.org/).
 
 Remember the path to your key (by default it is `/home/<user>/.ssh/id_rsa.pub` or `C:\Users\<user>\.ssh\id_rsa.pub`).

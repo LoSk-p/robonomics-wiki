@@ -21,11 +21,14 @@ The Spot SDK includes APIs, client libraries, and examples that support the deve
 
 Read [GraphNav Tech Summary](https://dev.bostondynamics.com/docs/concepts/autonomy/graphnav_tech_summary) to learn how it works. [Initialisation](https://dev.bostondynamics.com/docs/concepts/autonomy/initialization) is also important part, it will be usefull in this lesson.
 
-> You can view recorded maps with [View Map](https://github.com/boston-dynamics/spot-sdk/tree/master/python/examples/graph_nav_view_map) example.
+> You can view recorded maps with [View Map](https://github.com/boston-dynamics/spot-sdk/tree/master/python/examples/graph_nav_view_map) example. For that you need to copy the map to your computer:
+> ```bash
+> scp -r student@\[200:2fba:a23a:9d37:7e2b:3303:ca4e:208f\]:<path_to_the_map_on_spot> <path_to_the_map_to_download>
+> ``` 
+> Also you need [install spot packages](https://github.com/boston-dynamics/spot-sdk/blob/master/docs/python/quickstart.md#install-spot-python-packages).
 
 ## Task 
 
-You need to record a map avoiding obstacles and make spot go from start point to end point.
+You need to record a map avoiding obstacles and make spot go from start point to end point. Save your mission in `/home/student/map`.
 
-Look at the examples of [recording and playing missions](https://github.com/boston-dynamics/spot-sdk/tree/master/python/examples/graph_nav_command_line).
-
+You can use examples of [recording and playing missions](https://github.com/boston-dynamics/spot-sdk/tree/master/python/examples/graph_nav_command_line).
