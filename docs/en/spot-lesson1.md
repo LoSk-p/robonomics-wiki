@@ -25,7 +25,7 @@ To control Spot you need to connect to Spot Core. You can do that using ssh, in 
 ssh student@200:2fba:a23a:9d37:7e2b:3303:ca4e:208f
 ```
 
-> Also you can see what the robot is doing in real-time <a href="http://200:7938:167:4f0a:e7f4:196c:6585:52ad]:8081/?action=stream">livestream</a>.
+> Also you can see what the robot is doing in real-time <a href="http://[200:7938:167:4f0a:e7f4:196c:6585:52ad]:8081/?action=stream">livestream</a>.
 
 Username and password that you need to use in your python code for authorisation you can find in `~/credentials` file.
 

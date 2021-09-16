@@ -29,6 +29,6 @@ Read [GraphNav Tech Summary](https://dev.bostondynamics.com/docs/concepts/autono
 
 ## Task 
 
-You need to record a map avoiding obstacles and make spot go from start point to end point. Save your mission in `/home/student/map`.
+You need to record a map avoiding obstacles and make spot go from start point to end point. Save your mission in `/home/student/result`.
 
 You can use examples of [recording and playing missions](https://github.com/boston-dynamics/spot-sdk/tree/master/python/examples/graph_nav_command_line).

@@ -1,37 +1,36 @@
 ---
-title: Lesson 6. Spot service and maintenance
+title: Lesson 6. Mission Service
 contributors: [LoSk-p]
 translated: true
 ---
 
-In this lesson you will learn what should you do if you just got the robot: the first run and network setup. Also you will learn how to run the calibration process that should be run monthly.
+In the fifth lesson you will create autonomous mission with behavior tree structure.
 
-## First Run
+## Requirements
 
-Look at [Startup Procedure](https://support.bostondynamics.com/s/article/Startup-Procedure) page in Documentation.
+Before this lesson go through [Lesson 0](/docs/spot-lesson0) to setup your connection (if you haven't done it before).
 
-## Networking
+> Don't forget to run Yggdrasil if you use macOS:
+> ```bash
+> sudo yggdrasil -useconffile /etc/yggdrasil.conf
+> ```
 
-Spot offers a variety of networking options to support a diverse set of applications and environments. Options include:
+## Documentation
 
-* Spot as a connected peer. Physicall connection to Spot.
+The Mission Service is a way for API clients to specify high level autonomous behaviors for Spot using behavior trees. Read more about behavior trees in [Mission Service](https://dev.bostondynamics.com/docs/concepts/autonomy/missions_service) page.
 
-* Spot as a WiFi access point. 
-
-* Spot as a WiFi client. Spot can join an existing WiFi network, and applications can also join the same WiFi network to talk to Spot.
-
-For more information look at [Networking page](https://dev.bostondynamics.com/docs/concepts/networking).
-
-Spot Core is connected to the Spot via payload port. Spot Core can be connected to the Internet with Wi-Fi dongle. The setup instructions you can find at [Spot Core Cockpit](https://dev.bostondynamics.com/docs/payload/spot_core_cockpit.html?highlight=spot%20check) page.
-
-## Calibration
-
-Spot Check is a full calibration of the robot. Also you can run the camera calibration 
-
-* [run_spot_check](https://github.com/boston-dynamics/spot-sdk/blob/master/python/bosdyn-client/src/bosdyn/client/spot_check.py#L164). Run full spot check routine. The robot should be sitting on flat ground when this routine is started. This routine calibrates robot joints and checks camera health.
-
-* [run_camera_calibration](https://github.com/boston-dynamics/spot-sdk/blob/master/python/bosdyn-client/src/bosdyn/client/spot_check.py#L204). Run full camera calibration routine for robot. This function blocks until calibration has completed. This function should be called once the robot is powered on and standing in the configuration described in user documentation.
+You can find information about Node types in [Behavior Tree Node Types](/docs/spot-behavior-tree-node-types) page.
 
 ## Task
 
-Run spot check and view result of the calibration.
+You need to create autonomous mission for Spot using behavior trees. In the mission Spot must:
+1. Stand up.
+2. Ask operator (you) what waypoint should it go to.
+3. Go to choosen waypoint.
+4. At the waypoint repeat steps 2 and 3.
+5. During all mission monitor the battery status and if battery power is lower than the value from task (in the `lesson` folder), ask operator if Spot shoul stop mission or continue.
+6. If the answer will be `Stop`, spot must take a battery change pose.
+
+> Use the mission from previous lesson or if you haven't saved it use mission from the `lessons` folder.
+
+The example of how to ask and answer thw questions you can find in [mission_question_answerer](https://github.com/boston-dynamics/spot-sdk/tree/master/python/examples/mission_question_answerer).
