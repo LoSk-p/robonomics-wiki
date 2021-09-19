@@ -23,7 +23,7 @@ Using world object service you can find fiducials near the spot.
 
 > Spot can find objects around faster if he stands.
 
-In the task you will need find fiducials' coordinates and go to them. How to go to the local coordinates you can learn from [Lesson 2](/docs/en/spot-lesson2). The example of how to find fiducial and it's coordinates is in [fiducial_follow example](https://github.com/boston-dynamics/spot-sdk/blob/7ce5c5f31f4e1e45e9ff4be29fb097e258b75919/python/examples/fiducial_follow/fiducial_follow.py).
+In the task you will need find fiducials' coordinates and go to them. How to go to the local coordinates you can learn from [Lesson 2](/docs/en/spot-lesson2.md). The example of how to find fiducial and it's coordinates is in [fiducial_follow example](https://github.com/boston-dynamics/spot-sdk/blob/7ce5c5f31f4e1e45e9ff4be29fb097e258b75919/python/examples/fiducial_follow/fiducial_follow.py).
 
 1. Firstly, you need to find fiducial object with World Object Service:
 ```python
