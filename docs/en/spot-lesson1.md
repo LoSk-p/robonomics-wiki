@@ -1,50 +1,65 @@
 ---
-title: Lesson 1. Robot Services
-contributors: [LoSk-p, vitl2907]
+title: Lesson 1. Emergency stop, initialization, body position control
+contributors: [LoSk-p, vitl2907, khssnv]
 translated: true
 ---
 
+# Lesson 1. Emergency stop, initialization, body position control
+
 Welcome to the first lesson!
+
 During this lesson you will learn how to authorize yourself as a user, get motor power control and send basic commands to Spot.
 
-https://youtu.be/qdk7BjWJprc
+Watch our introductory video if you haven't seen it already: [The First Lesson with Spot SDK](https://youtu.be/qdk7BjWJprc).
 
 ## Requirements
 
-Before this lesson go through [Lesson 0](/docs/spot-lesson0) to setup your connection (if you haven't done it before).
+Ensure you have Yggdrasil Network software running and configured as described in the [Lesson 0](/docs/spot-lesson0). Otherwise you will not have connection to the robot.
 
-> Don't forget to run Yggdrasil if you use macOS:
+> On macOS you may need to launch Yggdrasil Network in the terminal:
 > ```bash
 > sudo yggdrasil -useconffile /etc/yggdrasil.conf
 > ```
 
 ## Connection
 
-To control Spot you need to connect to Spot Core. You can do that using ssh, in the terminal:
+To control Spot you need to connect to SpotCORE computer. You can do that using SSH, in the terminal:
+
 ```bash
-ssh student@200:2fba:a23a:9d37:7e2b:3303:ca4e:208f
+ssh student@strelka.ygg.merklebot.com
 ```
 
-> Also you can see what the robot is doing in real-time <a href="http://[200:7938:167:4f0a:e7f4:196c:6585:52ad]:8081/?action=stream">livestream</a>.
-
-Username and password that you need to use in your python code for authorisation you can find in `~/credentials` file.
-
-## Documentation
+## Theory
 
 Read [Understanding Spot Programming](https://dev.bostondynamics.com/docs/python/understanding_spot_programming) page in spot-sdk documentation and follow the steps.
 
-For Spot authentication use the same username and password as for Core. Spot address is `192.168.50.3`.
+You can find more detailed information for this lesson in [Base Services](https://dev.bostondynamics.com/docs/concepts/base_services), [Geometry and Frames](https://dev.bostondynamics.com/docs/concepts/geometry_and_frames), [Robot Services](https://dev.bostondynamics.com/docs/concepts/robot_services) and [E-Stop](https://dev.bostondynamics.com/docs/concepts/estop_service) sections of spot-sdk documentation.
 
-> Use `python3` instead of `python`
+## Practice
+
+1. Connect to SpotCORE by SSH from the terminal,
+
+```console
+ssh student@strelka.ygg.merklebot.com
+```
+
+2. Run e-stop controller on SpotCORE and release e-stop. For Spot authentication use username and password from `/home/student/credentials` file. Spot address is `192.168.50.3`,
+
+```console
+cd ~/github.com/boston-dynamics/spot-sdk/python/examples/estop/
+python3 estop_nogui.py #ToDo: cli arguments
+```
+
+3. Create a script can authenticate in Spot, acquire control (lease) and power on the robot,
 
 > In [Taking ownership of Spot (Leases)](https://dev.bostondynamics.com/docs/python/understanding_spot_programming#taking-ownership-of-spot-leases) section use `lease = lease_client.acquire()` before `lease_keep_alive = bosdyn.client.lease.LeaseKeepAlive(lease_client)`
 
-You can find more detailed information for this lesson in [Base Services](https://dev.bostondynamics.com/docs/concepts/base_services), [Geometry and Frames](https://dev.bostondynamics.com/docs/concepts/geometry_and_frames), [Robot Services](https://dev.bostondynamics.com/docs/concepts/robot_services) and [E-Stop](https://dev.bostondynamics.com/docs/concepts/estop_service) sections of spot-sdk documentation.
+4. Try your script with stand-up and sit-down commands. Ensure robot moves as expected,
 
-## Task
+5. Add body position control to your script. Experiment with `bosdyn.geometry.EulerZXY` robot command argument builder in order to identify what yaw, roll and pitch parameters you need to set to solve the challenge. The range of Pitch, Yaw and Roll is from -0.5 to 0.5.
 
-In the first lesson you need to change Spot's body position to make it trace your initials with it's face. For that, you will have to experiment with different body positions. The range of Pitch, Yaw and Roll is from -0.5 to 0.5
+> Make sure you run your script by Python 3 with `python3` command. Command `python` refers to an obsolete Python 2 interpreter.
 
-## Results
+## The challenge
 
-We'll send the rosbag file to your e-mail.
+In the first lesson you need to change Spot's body position to make it stand-up, trace your initials with it's face and then sit-down.
