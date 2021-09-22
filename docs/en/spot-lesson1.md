@@ -43,20 +43,16 @@ You can find more detailed information for this lesson in [Base Services](https:
 ssh student@strelka.ygg.merklebot.com
 ```
 
-2. Run e-stop controller on SpotCORE and release e-stop. For Spot authentication use username and password from `/home/student/credentials` file. Spot address is `192.168.50.3`,
+2. Create a script can authenticate in Spot, acquire control (lease) and power on the robot.
 
-```console
-cd ~/github.com/boston-dynamics/spot-sdk/python/examples/estop/
-python3 estop_nogui.py #ToDo: cli arguments
-```
-
-3. Create a script can authenticate in Spot, acquire control (lease) and power on the robot,
+We create [e-stop endpoint](https://dev.bostondynamics.com/python/examples/estop/readme) for you, so you should not create it.
+For Spot authentication use username and password from `/home/student/credentials` file. Spot address is `192.168.50.3`.
 
 > In [Taking ownership of Spot (Leases)](https://dev.bostondynamics.com/docs/python/understanding_spot_programming#taking-ownership-of-spot-leases) section use `lease = lease_client.acquire()` before `lease_keep_alive = bosdyn.client.lease.LeaseKeepAlive(lease_client)`
 
-4. Try your script with stand-up and sit-down commands. Ensure robot moves as expected,
+3. Try your script with stand-up and sit-down commands. Ensure robot moves as expected,
 
-5. Add body position control to your script. Experiment with `bosdyn.geometry.EulerZXY` robot command argument builder in order to identify what yaw, roll and pitch parameters you need to set to solve the challenge. The range of Pitch, Yaw and Roll is from -0.5 to 0.5.
+4. Add body position control to your script. Experiment with `bosdyn.geometry.EulerZXY` robot command argument builder in order to identify what yaw, roll and pitch parameters you need to set to solve the challenge. The range of Pitch, Yaw and Roll is from -0.5 to 0.5.
 
 > Make sure you run your script by Python 3 with `python3` command. Command `python` refers to an obsolete Python 2 interpreter.
 
