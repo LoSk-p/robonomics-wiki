@@ -1,27 +1,32 @@
 ---
-title: Lesson 2. Robot Command Service
-contributors: [LoSk-p]
+title: Lesson 2. Remote controlled and programmed motion
+contributors: [LoSk-p, khssnv]
 translated: true
 ---
+
+# Lesson 2. Remote controlled and programmed motion
 
 In the second lesson you will learn how to use Spot Command services and walk with Spot.
 
 ## Requirements
 
-Before this lesson go through [Lesson 0](/docs/spot-lesson0) to setup your connection (if you haven't done it before).
+Ensure you have Yggdrasil Network software running and configured as described in the [Lesson 0](/docs/spot-lesson0). Otherwise you will not have connection to the robot.
 
-> Don't forget to run Yggdrasil if you use macOS:
+> On macOS you may need to launch Yggdrasil Network in the terminal:
 > ```bash
 > sudo yggdrasil -useconffile /etc/yggdrasil.conf
 > ```
 
-## Documentation
+## Theory
 
-To control Spot with `Robot Command Service` you firstly need to build command. Spot SDK has RobotCommandBuilder class for it. Full list of methods and its descriprions you can find [here](https://github.com/boston-dynamics/spot-sdk/blob/7ce5c5f31f4e1e45e9ff4be29fb097e258b75919/python/bosdyn-client/src/bosdyn/client/robot_command.py#L593). 
+To control Spot with `Robot Command Service` you firstly need to build command.
+Spot SDK has a `RobotCommandBuilder` class for it.
+Full list of methods and its descriprions you can find [here](https://github.com/boston-dynamics/spot-sdk/blob/7ce5c5f31f4e1e45e9ff4be29fb097e258b75919/python/bosdyn-client/src/bosdyn/client/robot_command.py#L593). 
 
 In this lesson you may need to use:
 
 * Stand Command
+
 ```python
 def stand_command(params=None, body_height=0.0, 
                 footprint_R_body=geometry.EulerZXY())
@@ -36,7 +41,8 @@ def synchro_se2_trajectory_point_command(goal_x, goal_y, goal_heading,
                                     locomotion_hint=spot_command_pb2.HINT_AUTO,
                                     build_on_command=None)
 ```
-The example of use [here](https://github.com/boston-dynamics/spot-sdk/blob/master/python/examples/frame_trajectory_command/frame_trajectory_command.py).
+
+Check usage example [here](https://github.com/boston-dynamics/spot-sdk/blob/master/python/examples/frame_trajectory_command/frame_trajectory_command.py).
 
 * Velocity Command
 
@@ -56,6 +62,7 @@ def stance_command(se2_frame_name, pos_fl_rt_frame, pos_fr_rt_frame,
                         footprint_R_body=geometry.EulerZXY(), 
                         build_on_command=None)
 ```
+
 The example of use is [here](https://github.com/boston-dynamics/spot-sdk/blob/91ed30607264e795699995d6d7834ba0c8a94d36/python/examples/stance/stance_in_place.py)
 
 * Pose to change battery
@@ -75,11 +82,11 @@ cmd = RobotCommandBuilder.velocity_command(0.5, 0, 0.5)
 command_client.robot_command(cmd, end_time_secs=time.time() + 2)
 ```
 
-## Task
+## The challenge
 
-You will have a list of points with their local coordinates in the `lessons` directory and you need to make Spot go through theese points. The origin of the local coordinates is in the place where Spot was turned on. Spot must do one of moves in each point and they should not be repeated. 
+You will have a list of points with their local coordinates in the `~/lessons` directory and you need to make Spot go through theese points. The origin of the local coordinates is in the place where Spot was turned on. Spot must do one of moves in each point and they should not be repeated. 
 
-The list of moves: 
+The list of moves:
 * To go sideways to point
 * To turn around himself
 * To lie down in pose to change battery
