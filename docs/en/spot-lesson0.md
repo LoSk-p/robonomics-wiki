@@ -1,12 +1,18 @@
 ---
 title: Lesson 0. Connection
-contributors: [LoSk-p, vitl2907]
+contributors: [LoSk-p, vitl2907, khssnv]
 translated: true
 ---
 
+# Configure and test connection to Spot
+
+Let's start establishing connection to the robot.
+Our goal is to get answers from Spot to our [ping](https://en.wikipedia.org/wiki/Ping_(networking_utility)) signals.
+We use Yggdrasil Network to expose Spot to the internet, that means we will need to configure Yggdrasil Network support on your computer first.
+
 ## 1. Yggdrasil Installation 
 
-Yggdrasil is an early-stage implementation of a fully end-to-end encrypted IPv6 network. We use it to connect to Spot, so before startitng the lessons you need to install it on your computer.
+Yggdrasil is an early-stage implementation of a fully end-to-end encrypted IPv6 network. Before startitng the lessons you need to install it on your computer.
 
 ### For Linux: 
 Installation instructions [here](https://yggdrasil-network.github.io/installation-linux-deb.html).
@@ -100,7 +106,7 @@ Check if Yggdrasil works well.
 
 For that try to ping Spot address:
 ```bash
-ping 200:2fba:a23a:9d37:7e2b:3303:ca4e:208f
+ping strelka.ygg.khassanov.xyz
 ```
 > To open terminal in Windows press `Win+R`, type `cmd` and press `Enter`.
 
