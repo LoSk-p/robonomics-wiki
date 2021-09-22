@@ -1,8 +1,10 @@
 ---
-title: Lesson 5. Spot service and maintenance
+title: Lesson 5. Robot service: camera calibration and "Spot check" procedure
 contributors: [LoSk-p]
 translated: true
 ---
+
+# Lesson 5. Robot service: camera calibration and "Spot check" procedure
 
 In this lesson you will learn what should you do if you just got the robot: the first run and network setup. Also you will learn how to run the calibration process that should be run monthly.
 
@@ -34,6 +36,6 @@ Spot Check is a full calibration of the robot. Also you can run the camera calib
 
 * [run_camera_calibration](https://github.com/boston-dynamics/spot-sdk/blob/master/python/bosdyn-client/src/bosdyn/client/spot_check.py#L204). Run full camera calibration routine for robot. This function blocks until calibration has completed. This function should be called once the robot is powered on and standing in the configuration described in user documentation.
 
-## Task
+## The challenge
 
-Run spot check and safe the result of the calibration in a `/home/student/result` directory as a text file.
+Run "spot check" and save the result of the calibration in a `/home/student/result` directory as a text file. Then run camera calibration procedure.
