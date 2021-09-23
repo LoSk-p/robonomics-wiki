@@ -8,18 +8,27 @@ translated: true
 
 In the second lesson you will learn how to use Spot Command services and walk with Spot.
 
-## Requirements
+## The challenge
 
-Ensure you have Yggdrasil Network software running and configured as described in the [Lesson 0](/docs/spot-lesson0). Otherwise you will not have connection to the robot.
+You have a list of points with their local coordinates in the `/home/student/lessons` directory. Spot should go through these points. The origin of the local coordinates is in the place where Spot was turned on. On each point Spot should make one of the motions from the following list, then go to the next point. 
 
-> On macOS you may need to launch Yggdrasil Network in the terminal:
-> ```bash
-> sudo yggdrasil -useconffile /etc/yggdrasil.conf
+The list of moves:
+* To turn around himself
+* To lie down in pose to change battery
+* To nod
+* To change the stance of robot's legs
+* To go sideways to the next point
+
+Create and execute a Python script that implements behavior described.
+
+> You can find Spot local coordinates with:
+> ```python
+> get_vision_tform_body(robot_state_client.get_robot_state().kinematic_state.transforms_snapshot)
 > ```
 
 ## Theory
 
-To control Spot with `Robot Command Service` you firstly need to build command.
+You can control Spot with `Robot Command Service`. Firstly you need to build a command to supply it to the command service.
 Spot SDK has a `RobotCommandBuilder` class for it.
 Full list of methods and its descriprions you can find [here](https://github.com/boston-dynamics/spot-sdk/blob/7ce5c5f31f4e1e45e9ff4be29fb097e258b75919/python/bosdyn-client/src/bosdyn/client/robot_command.py#L593). 
 
@@ -82,18 +91,22 @@ cmd = RobotCommandBuilder.velocity_command(0.5, 0, 0.5)
 command_client.robot_command(cmd, end_time_secs=time.time() + 2)
 ```
 
-## The challenge
+## Practice
 
-You will have a list of points with their local coordinates in the `~/lessons` directory and you need to make Spot go through theese points. The origin of the local coordinates is in the place where Spot was turned on. Spot must do one of moves in each point and they should not be repeated. 
-
-The list of moves:
-* To go sideways to point
-* To turn around himself
-* To lie down in pose to change battery
-* To nod
-* To change the stance of robot's legs
-
-> You can find Spot local coordinates with:
-> ```python
-> get_vision_tform_body(robot_state_client.get_robot_state().kinematic_state.transforms_snapshot)
+> Ensure you have Yggdrasil Network software running and configured as described in the [Lesson 0](/docs/spot-lesson0). Otherwise you will not have connection to the robot.
+> On macOS you may need to launch Yggdrasil Network in the terminal:
+> ```bash
+> sudo yggdrasil -useconffile /etc/yggdrasil.conf
 > ```
+
+1. Connect to Spot from a terminal or using your development environment remote execution function.
+
+```console
+ssh student@strelka.ygg.merklebot.com
+```
+
+2. Develop and demonstrate your solution to the challenge.
+
+We create [E-Stop endpoint](https://dev.bostondynamics.com/python/examples/estop/readme) for you, so you should not create it.
+For Spot authentication use username and password from `/home/student/credentials` file.
+Spot address is `192.168.50.3`.
