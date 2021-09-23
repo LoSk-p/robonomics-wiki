@@ -8,20 +8,15 @@ translated: true
 
 In the third lesson you will learn how to find World Objects and go to them.
 
-## Requirements
+## The challenge
 
-Ensure you have Yggdrasil Network software running and configured as described in the [Lesson 0](/docs/spot-lesson0). Otherwise you will not have connection to the robot.
-
-> On macOS you may need to launch Yggdrasil Network in the terminal:
-> ```bash
-> sudo yggdrasil -useconffile /etc/yggdrasil.conf
-> ```
+You start with Spot in the place with some fiducials (a mark on the object) around. Create and execute Python script detects at least two fiducials and moves Spot to each of them within 1 m.
 
 ## Theory
 
 Spot has the World Object Service that provides a way to track and store objects detected in the world around Spot. A world object is considered a higher-level item in the scene that has some amount of semantic information associated with it. More information you can find in [Robot Services](https://dev.bostondynamics.com/docs/concepts/robot_services#world-object) tab in Spot SDK documentation.
 
-Using world object service you can find fiducials near the spot. 
+Using world object service you can find fiducials near the Spot. 
 
 > Spot can find objects around faster if he stands.
 
@@ -40,7 +35,22 @@ Then get fiducial coordinates in a visual frame:
 fiducial = fiducial_objects[0]
 vision_tform_fiducial = get_a_tform_b(fiducial.transforms_snapshot, VISION_FRAME_NAME,fiducial.apriltag_properties.frame_name_fiducial.to_proto()
 ```
+## Practice
 
-## The challenge
+> Ensure you have Yggdrasil Network software running and configured as described in the [Lesson 0](/docs/spot-lesson0). Otherwise you will not have connection to the robot.
+> On macOS you may need to launch Yggdrasil Network in the terminal:
+> ```bash
+> sudo yggdrasil -useconffile /etc/yggdrasil.conf
+> ```
 
-Spot is in the place with some fiducials around. You need detect at least two fiducials and come to each of them within 1 m.
+1. Connect to Spot from a terminal or using your development environment remote execution function.
+
+```console
+ssh student@strelka.ygg.merklebot.com
+```
+
+2. Develop and demonstrate your solution to the challenge.
+
+We create [E-Stop endpoint](https://dev.bostondynamics.com/python/examples/estop/readme) for you, so you should not create it.
+For Spot authentication use username and password from `/home/student/credentials` file.
+Spot address is `192.168.50.3`.
